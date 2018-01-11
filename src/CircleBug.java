@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ob.gridworld;
 
+
+                      
 import info.gridworld.actor.Bug;
+
 /**
  *
  * @author sicp
  */
-public class SpiralBug extends Bug
+public class CircleBug extends Bug
 {
     private int steps;
     private int sideLength;
@@ -19,7 +21,7 @@ public class SpiralBug extends Bug
      * Constructs a box bug that traces a square of a given side length
      * @param length the side length
      */
-    public SpiralBug(int length)
+    public CircleBug(int length)
     {
         steps = 0;
         sideLength = length;
@@ -40,8 +42,6 @@ public class SpiralBug extends Bug
             turn();
             //turn();
             steps = 0;
-            sideLength++;
         }
     }
-    
 }
