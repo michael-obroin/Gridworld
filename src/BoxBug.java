@@ -40,6 +40,7 @@ public class BoxBug extends Bug
     /**
      * Moves to the next location of the square.
      */
+    @Override
     public void act()
     {
         if (steps < sideLength && canMove())

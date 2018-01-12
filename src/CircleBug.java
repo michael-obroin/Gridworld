@@ -28,7 +28,7 @@ public class CircleBug extends Bug
     }
 
     /**
-     * Moves to the next location of the square.
+     * Moves to the next location of the circle.
      */
     public void act()
     {
