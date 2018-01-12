@@ -1,6 +1,5 @@
 
 import info.gridworld.actor.Bug;
-import info.gridworld.grid.Location;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,7 +15,7 @@ public class DancingBug extends Bug
 {
     private int currentIndex = 0;
     //private int steps = 3;
-    private int[] danceArray;
+    private final int[] danceArray;
     
     public DancingBug(int[] inputArray) 
     {
@@ -27,18 +26,12 @@ public class DancingBug extends Bug
     public void act() 
     {
         int numTurns = danceArray[currentIndex];
-//        for (int i = 0; i < numTurns; i++) 
-//        {
-//            turn();
-//        }
         
-        turn();
-        turn();
-        turn();
-        turn();
-        turn();
-
-        //setDirection(Location.EAST);
+        for (int i = 0; i < numTurns; i++) 
+        {
+            turn();
+        }
+        
         move();
         
         currentIndex++;

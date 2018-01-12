@@ -16,7 +16,7 @@ public class ZetaBug extends Bug
 {
     
     private int steps;
-    private int sideLength;
+    private final int sideLength;
     private int turnNumber = 0;
 
     /**
@@ -34,6 +34,7 @@ public class ZetaBug extends Bug
     /**
      * Moves to the next location of the square.
      */
+    @Override
     public void act()
     {
         if (steps < sideLength && canMove())
@@ -50,9 +51,6 @@ public class ZetaBug extends Bug
             setDirection(Location.EAST);
             steps = 0;
             turnNumber = 2;
-        } else if (turnNumber == 2)
-        {
-            
         }
         
     }

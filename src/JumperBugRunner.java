@@ -1,4 +1,6 @@
+
 import info.gridworld.actor.ActorWorld;
+import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location;
 import info.gridworld.grid.UnboundedGrid;
 import java.awt.Color;
@@ -9,22 +11,23 @@ import java.awt.Color;
  * and open the template in the editor.
  */
 
-
 /**
  *
  * @author sicp
  */
-public class ZetaBugRunner 
+public class JumperBugRunner 
 {
+    
     public static void main(String[] args)
     {
         //code for unbounded grid
         UnboundedGrid grid = new UnboundedGrid<>();          
         ActorWorld world = new ActorWorld(grid);
         
-        ZetaBug alice = new ZetaBug(4);
+        JumperBug alice = new JumperBug();
         alice.setColor(Color.YELLOW);
         world.add(new Location(7, 8), alice);
+        world.add(new Location(7,10), new Rock());
         
         world.show();
     }
