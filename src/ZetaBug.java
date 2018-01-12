@@ -6,6 +6,7 @@
 
 
 import info.gridworld.actor.Bug;
+import info.gridworld.grid.Location;
 
 /**
  *
@@ -16,6 +17,7 @@ public class ZetaBug extends Bug
     
     private int steps;
     private int sideLength;
+    private int turnNumber = 0;
 
     /**
      * Constructs a box bug that traces a square of a given side length
@@ -26,7 +28,7 @@ public class ZetaBug extends Bug
         steps = 0;
         sideLength = length;
         
-        setDirection(1);
+        setDirection(Location.EAST);
     }
 
     /**
@@ -38,14 +40,21 @@ public class ZetaBug extends Bug
         {
             move();
             steps++;
-        }
-        else
+        }else if (turnNumber == 0 && canMove())
         {
-            turn();
-            //turn();
+            setDirection(Location.SOUTHWEST);
             steps = 0;
-            sideLength++;
+            turnNumber = 1;
+        } else if (turnNumber == 1 && canMove())
+        {
+            setDirection(Location.EAST);
+            steps = 0;
+            turnNumber = 2;
+        } else if (turnNumber == 2)
+        {
+            
         }
+        
     }
     
 }

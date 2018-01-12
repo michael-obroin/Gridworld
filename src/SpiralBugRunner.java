@@ -17,7 +17,7 @@ import java.awt.Color;
  */
 public class SpiralBugRunner 
 {
-        public static void main(String[] args)
+    public static void main(String[] args)
     {
         //code for unbounded grid
         UnboundedGrid grid = new UnboundedGrid<Actor>();          
