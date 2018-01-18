@@ -1,4 +1,5 @@
 import info.gridworld.actor.ActorWorld;
+import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location;
 import info.gridworld.grid.UnboundedGrid;
 import java.awt.Color;
@@ -27,6 +28,7 @@ public class DancingBugRunner
         DancingBug alice = new DancingBug(array1);
         alice.setColor(Color.RED);
         world.add(new Location(7, 8), alice);
+        world.add(new Location(7,10), new Rock());
         
         world.show();
     }

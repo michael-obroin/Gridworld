@@ -28,7 +28,10 @@ public class JumperBug extends Bug
         if (gr.isValid(next))
             moveTo(next);
         else
-            removeSelfFromGrid();
+        {
+           System.out.println("Survival of the fittest");
+            removeSelfFromGrid(); 
+        }
     }
     
     @Override

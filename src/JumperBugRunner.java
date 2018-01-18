@@ -23,13 +23,22 @@ public class JumperBugRunner
         //code for unbounded grid
         UnboundedGrid grid = new UnboundedGrid<>();          
         ActorWorld world = new ActorWorld(grid);
+        int[] array1 = {1,2,3,4,5};
         
         JumperBug alice = new JumperBug();
         alice.setColor(Color.YELLOW);
         world.add(new Location(7, 8), alice);
+        world.add(new Location(6,5), new DancingBug(array1));
         world.add(new Location(7,10), new Rock());
         
         world.show();
+    }
+
+    private static class DancingBugImpl extends DancingBug {
+
+        public DancingBugImpl(int[] inputArray) {
+            super(inputArray);
+        }
     }
     
 }

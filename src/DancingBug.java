@@ -27,19 +27,22 @@ public class DancingBug extends Bug
     {
         int numTurns = danceArray[currentIndex];
         
-        for (int i = 0; i < numTurns; i++) 
-        {
-            turn();
-        }
         
-        move();
+            for (int i = 0; i < numTurns; i++) 
+            {
+                turn();
+            }
         
-        currentIndex++;
-        if (currentIndex >= danceArray.length)
-        {
-            currentIndex = 0;
-        }
+            if(canMove()) move();
+        
+            currentIndex++;
+            if (currentIndex >= danceArray.length)
+            {
+                currentIndex = 0;
+            }
         
     }
+        
+    
     
 }
