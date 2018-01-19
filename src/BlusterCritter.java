@@ -32,10 +32,9 @@ public class BlusterCritter extends Critter
         
         for (Actor immediateNeighbor : immediateNeighbors) 
         {
-            for (Iterator<Actor> it = getGrid().getNeighbors(immediateNeighbor.getLocation()) 
-                    .iterator(); it.hasNext();) 
+            for (Object object : getGrid().getNeighbors(immediateNeighbor.getLocation())) 
             {
-                Object object = it.next();
+                
             }
             returnList.add(immediateNeighbor);
             
