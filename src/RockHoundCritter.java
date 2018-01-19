@@ -21,7 +21,7 @@ public class RockHoundCritter extends Critter
     {
         for (Actor a : actors)
         {
-            if (!(a instanceof Rock) && !(a instanceof Critter))
+            if ((a instanceof Rock))
                 a.removeSelfFromGrid();
         }
     }
