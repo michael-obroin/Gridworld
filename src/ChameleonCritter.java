@@ -33,6 +33,7 @@ public class ChameleonCritter extends Critter
     /**
      * Randomly selects a neighbor and changes this critter's color to be the
      * same as that neighbor's. If there are no neighbors, no action is taken.
+     * @param actors
      */
     @Override
     public void processActors(ArrayList<Actor> actors)
