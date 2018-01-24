@@ -2,6 +2,7 @@
 import info.gridworld.actor.Actor;
 import info.gridworld.actor.Critter;
 import info.gridworld.actor.Rock;
+import info.gridworld.grid.Location;
 import java.util.ArrayList;
 
 /*
@@ -26,4 +27,14 @@ public class RockHoundCritter extends Critter
         }
     }
     
+    /**
+     * Turns towards the new location as it moves.
+     * @param loc
+     */
+    @Override
+    public void makeMove(Location loc)
+    {
+        setDirection(getLocation().getDirectionToward(loc));
+        super.makeMove(loc);
+    }
 }

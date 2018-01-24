@@ -46,4 +46,15 @@ public class ChameleonKidCritter extends ChameleonCritter
         return returnList;
     }
 
+    /**
+     * Turns towards the new location as it moves.
+     * @param loc
+     */
+    @Override
+    public void makeMove(Location loc)
+    {
+        setDirection(getLocation().getDirectionToward(loc));
+        super.makeMove(loc);
+    }
+    
 }

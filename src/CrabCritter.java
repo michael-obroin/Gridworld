@@ -41,9 +41,10 @@ public class CrabCritter extends Critter
      * front-right and to its front-left
      * @return a list of actors occupying these locations
      */
+    @Override
     public ArrayList<Actor> getActors()
     {
-        ArrayList<Actor> actors = new ArrayList<Actor>();
+        ArrayList<Actor> actors = new ArrayList<>();
         int[] dirs =
             { Location.AHEAD, Location.HALF_LEFT, Location.HALF_RIGHT };
         for (Location loc : getLocationsInDirections(dirs))
@@ -59,9 +60,10 @@ public class CrabCritter extends Critter
     /**
      * @return list of empty locations immediately to the right and to the left
      */
+    @Override
     public ArrayList<Location> getMoveLocations()
     {
-        ArrayList<Location> locs = new ArrayList<Location>();
+        ArrayList<Location> locs = new ArrayList<>();
         int[] dirs =
             { Location.LEFT, Location.RIGHT };
         for (Location loc : getLocationsInDirections(dirs))
@@ -73,7 +75,9 @@ public class CrabCritter extends Critter
 
     /**
      * If the crab critter doesn't move, it randomly turns left or right.
+     * @param loc
      */
+    @Override
     public void makeMove(Location loc)
     {
         if (loc.equals(getLocation()))
@@ -100,7 +104,7 @@ public class CrabCritter extends Critter
      */
     public ArrayList<Location> getLocationsInDirections(int[] directions)
     {
-        ArrayList<Location> locs = new ArrayList<Location>();
+        ArrayList<Location> locs = new ArrayList<>();
         Grid gr = getGrid();
         Location loc = getLocation();
     
