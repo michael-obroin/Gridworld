@@ -23,7 +23,7 @@ public class QuickCrabCritter extends CrabCritter
         if (gr == null)
             return;
         Location loc = getLocation();
-        Location adj;
+        Location adj;                                         
         Location next = null;
         
         boolean bothEmpty = false;

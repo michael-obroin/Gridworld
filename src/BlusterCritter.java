@@ -28,22 +28,29 @@ public class BlusterCritter extends Critter
     public ArrayList<Actor> getActors() 
     {
         ArrayList<Actor> returnList = new ArrayList<>();
-        
+        Actor parsedActor = null;
         Location currentLoc = getLocation();
         
         for (int i = -2; i < 3; i++) 
         {
-            int col = currentLoc.getCol();
-            int row = currentLoc.getRow();
+            int col = currentLoc.getCol() + i;
+            int row = 0;
+            
+            for (int j = -2; j < 3; j++) 
+            {
+                row = currentLoc.getRow() + j;
+            }
             
             Location parsingLoc = new Location(row, col);
-            Actor parsedActor = getGrid().get(parsingLoc);
+            if(getGrid().isValid(parsingLoc))
+                parsedActor = getGrid().get(parsingLoc);
             
             if( (parsedActor instanceof ChameleonCritter) || (parsedActor instanceof ChameleonKidCritter) 
                || (parsedActor instanceof CrabCritter) || (parsedActor instanceof RockHoundCritter) 
                || (parsedActor instanceof BlusterCritter))
             {
-                returnList.add(parsedActor);
+                if(!parsedActor.equals(this))
+                    returnList.add(parsedActor);
             }   
             
         }
@@ -55,22 +62,12 @@ public class BlusterCritter extends Critter
     public void processActors(ArrayList<Actor> actors) 
     {
         int size = getActors().size();
+        Color c = getColor();
         
         if(size >= COURAGEVAL)
-            colorChange(-0.05);
+            setColor(c.darker());
         else if(size < COURAGEVAL)
-            colorChange(0.05);
-    }
-    
-    public void colorChange(double in)
-    {
-        final double CHANGE_FACTOR = in;
-        Color c = getColor();
-        int red = (int) (c.getRed() * (1 + CHANGE_FACTOR));
-        int green = (int) (c.getGreen() * (1 + CHANGE_FACTOR));
-        int blue = (int) (c.getBlue() * (1 + CHANGE_FACTOR));
-
-        setColor(new Color(red, green, blue));
+            setColor(c.brighter());
     }
 
     /**

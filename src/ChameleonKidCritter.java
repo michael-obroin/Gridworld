@@ -1,4 +1,4 @@
-    
+                                       
 import info.gridworld.actor.Actor;
 import info.gridworld.grid.Location;
 import java.awt.Color;
@@ -17,13 +17,7 @@ public class ChameleonKidCritter extends ChameleonCritter
         int n = actors.size();
         if (n == 0)
         {
-            final double DARKENING_FACTOR = 0.05;
-            Color c = getColor();
-            int red = (int) (c.getRed() * (1 - DARKENING_FACTOR));
-            int green = (int) (c.getGreen() * (1 - DARKENING_FACTOR));
-            int blue = (int) (c.getBlue() * (1 - DARKENING_FACTOR));
-        
-            setColor(new Color(red, green, blue));
+            setColor(getColor().darker());
             return;
         }
         int r = (int) (Math.random() * n);
