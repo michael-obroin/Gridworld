@@ -24,7 +24,7 @@ public class QuickCrabCritter extends CrabCritter
             return;
         Location loc = getLocation();
         Location adj;                                         
-        Location next = null;
+        Location next;
         
         boolean bothEmpty = false;
         ArrayList occupied = getGrid().getOccupiedLocations();
