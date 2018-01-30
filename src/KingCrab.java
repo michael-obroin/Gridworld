@@ -19,9 +19,8 @@ public class KingCrab extends CrabCritter
     @Override
     public void processActors(ArrayList<Actor> actors) 
     {
-        for (int i = 0; i < actors.size(); i++) 
+        for (Actor kevin : actors) 
         {
-            Actor kevin = actors.get(i);
             int immediateDir = getLocation().getDirectionToward(kevin.getLocation());
             Location moveLocation = kevin.getLocation().getAdjacentLocation(immediateDir);
             
